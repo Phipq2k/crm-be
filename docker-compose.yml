@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  app:
+    image: overatevntech/crm-backend:0.0.01
+    container_name: crm-be_container
+    restart: always
+    ports:
+      - 8432:8432
+    environment:
+      - CONFIG_PORT = 8432
+      - POSTGRES_HOST=172.16.10.100
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=crm_postgresql
+      - POSTGRES_PASSWORD=3pvqWqghnCwFvGTvN5PE
+      - POSTGRES_DB=crm_postgresql
+      - ACCESS_TOKEN_SECRET = at-secrets
+      - REFRESH_TOKEN_SECRET = rt-secrets
+      - ACCESS_TOKEN_EXPIRESIN = 365d
+      - REFRESH_TOKEN_EXPIRESIN = 1000d
